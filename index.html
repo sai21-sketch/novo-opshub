@@ -90,7 +90,7 @@ let ACT=[],sb=null,USER=null;
 /* ADMIN ONLY: paste your keys between the quotes below (one time), then deploy.
    url/key  = Supabase Project URL + anon public key (leave empty to run in local browser mode)
    cloud/preset = Cloudinary cloud name + UNSIGNED upload preset (leave empty to store small files inside the app) */
-const CFG={url:'',key:'',cloud:'',preset:''};
+const CFG={url:'https://skcaxfqriihgdczpkbzo.supabase.co',key:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrY2F4ZnFyaWloZ2RjenBrYnpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5MDc0MzU0NSwiZXhwIjoyMTA2MzE5NTQ1fQ.rkX35SxAxLwiwUSVCXu2brbCLZIW4mxSoy2mDBz2meg',cloud:'h5dhgxvn',preset:'novo-opshub'};
 const SQL=`create table if not exists records(id text primary key, module text not null, data jsonb not null default '{}', updated_by text, created_at timestamptz default now());
 create table if not exists activity(id bigint generated always as identity primary key, ts timestamptz default now(), usr text, action text, module text, rec text);
 alter table records enable row level security;
